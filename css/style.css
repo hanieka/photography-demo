@@ -69,7 +69,37 @@
 }
 
 .bg-dark {
-    background-color: #003399 !important;
+    background-color: black !important;
+}
+.portfolio {
+    padding-left: 105px;
+}
+
+#portfolio {
+    padding-top: 100px;
+}
+
+#aboutPanel,
+#bookPanel,
+#contactPanel,
+#buyPanel {
+    font-size: 20px;
+    padding: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: none;
+}
+
+.submit-pay {
+    margin-top: 30px;
+}
+
+.contact-form {
+    padding-left: 60px;
+}
+
+.print-price {
+    margin-top: 10px;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -86,6 +116,11 @@
     z-index: 9999;
     background: url("../img/loader.gif") 50% 50% no-repeat white;
     background-size: 500px;
+}
+
+.a {
+    text-decoration: none;
+    color: white !important;
 }
 
 .white {
@@ -124,15 +159,64 @@ https://bennettfeely.com/clippy/ */
     background-color: rgba(255, 255, 255, 0);
 }
 
-.synthese {
-    font-family: synthese, sans-serif;
-    font-style: normal;
-    font-weight: 200;
+.libre-caslon {
+    font-family: "Libre Caslon Display", serif;
 }
 
-.garamond {
-    font-family: garamond-premier-pro, serif;
-    font-weight: 400;
+.raleway {
+    font-family: "Raleway", sans-serif;
+}
+
+.header-font {
+    font-size: 60px !important;
+}
+
+.main-nav {
+    padding-bottom: 20px;
+}
+
+.mn-item {
+    color: black;
+}
+
+.mn-item:hover {
+    color: #e24b20;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #e24b20 !important;
+    border-color: #e24b20 !important;
+}
+
+.text {
+    font-family: "Raleway", sans-serif;
+    color: black;
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: rgba(225, 225, 225, 0.85);
+}
+
+.grid-item:hover .overlay {
+    opacity: 1;
 }
 
 ul.header-l {
@@ -168,7 +252,7 @@ a.header-li:hover {
     font-size: 30px;
 }
 
-. .form-control {
+.form-control {
     display: block;
     width: 100%;
     height: calc(1.5em + 0.75rem + 2px);
@@ -198,10 +282,15 @@ textarea.form-control {
     background-color: rgb(255, 153, 0);
 }
 
+.mailing-list {
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
 .footer {
     padding-bottom: 1.2rem;
-    background-color: #003399;
-    text-color: white;
+    background-color: #e24b20 !important;
+    color: white;
 }
 
 footer.footer {

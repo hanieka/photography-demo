@@ -9,10 +9,20 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Rm 29</title>
+  <title>North Lake Photography Co</title>
 
   <!--JQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- load jQuery 3.5.1 -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    var jQuery_3_5_1 = $.noConflict(true);
+  </script>
+
+  <!-- load jQuery Slim -->
+  <script type="text/javascript" src="vendor/jquery/jquery.slim.min.js"></script>
+  <script type="text/javascript">
+    var jQuery_slim = $.noConflict(true);
+  </script>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -21,6 +31,7 @@
 
   <!-- Custom CSS -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/masonry.css" rel="stylesheet">
   <link href="css/xs.css" rel="stylesheet">
   <link href="css/small.css" rel="stylesheet">
   <link href="css/medium.css" rel="stylesheet">
@@ -35,7 +46,8 @@
 
 
   <!-- Adobe Fonts-->
-  <link rel="stylesheet" href="https://use.typekit.net/oav7wdc.css">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Raleway:wght@300&display=swap"
+    rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
@@ -49,287 +61,302 @@
 
 <body>
 
-  <!-- Mobile Navigation -->
-  <div class="content-mobile content-tablet">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand garamond" href="#">Rm 29</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav synthese">
-          <li class="nav-item">
-            <a class="nav-link" href="#about">about</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#ourteam">our team</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#services">services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">contact</a>
-          </li>
-        </ul>
+  <div class="section" id="portfolio">
+    <div class="container-fluid">
+      <h1 class="header-font my-4 font-weight-bold libre-caslon text-center">North Lake Photography Co.</h1>
+      <h3 class="main-nav raleway text-center">
+        <a href="#" id="flip" class="mn-item about">about </a>|
+        <a href="#" id="buyFlip" class="mn-item buyprints">buy prints</a> |
+        <a href="#" id="bookFlip" class="mn-item book">book a session</a> |
+        <a href="#" id="contactFlip" class="mn-item contact">contact</a>
+      </h3>
+
+      <!-- ABOUT -->
+      <div id="aboutPanel" class="raleway panel">
+        <div class="row">
+          <div class="col-3">
+            <img class="img-fluid" src="img/lorraine.jpg" style="width: 90%">
+          </div>
+          <div class="col-9">
+            <p class="about-text">
+              North Lake Photography Co. was founded in 2005 by me Lorraine Watson. I am
+              originally from
+              Granville,
+              Ohio but I moved to Chicago in 2007 to get a taste of the big city. I love telling the stories of people
+              from
+              all different backgrounds through my photography. Book a site with me so I can see the world through your
+              lens!
+            </p>
+            <p class="about-text">
+              Not quite ready to book yet? No problem! Leave me a message on my contact page and we can set up a free
+              consult to discuss your photography needs. I am so excited to meet you!
+            </p>
+          </div>
+        </div>
       </div>
-    </nav>
+
+
+      <!-- BUY -->
+      <div id="buyPanel" class="raleway panel">
+        <div class="row">
+          <div class=col-4>
+            <h2 class="text-center">Small Prints</h2>
+            <img class="img-fluid" src="img/lorraine.jpg" style="width: 90%">
+            <h5 class="text-center print-price">starting at $10</h2>
+          </div>
+          <div class=col-4>
+            <h2 class="text-center">Large Prints</h2>
+            <img class="img-fluid" src="img/lorraine.jpg" style="width: 90%">
+            <h5 class="text-center print-price">starting at $30</h2>
+          </div>
+          <div class=col-4>
+            <h2 class="text-center">Framed Prints</h2>
+            <img class="img-fluid" src="img/lorraine.jpg" style="width: 90%">
+            <h5 class="text-center print-price">starting at $45</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOOK -->
+      <div id="bookPanel" class="raleway panel">
+        <div class="row">
+          <div class="col-12">
+            <div class="container">
+              <form>
+
+                <div class="row">
+                  <div class="col-12 col-md-6 col-lg-6">
+                    <h3>Session Info</h3>
+                    <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="John M. Doe"> <br>
+                    <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                    <input type="text" id="email" name="email" placeholder="john@example.com"> <br>
+                    <label for="date"><i class="fa fa-calendar"></i> Date</label>
+                    <input type="date" id="date" name="date"><br>
+                    <label for="time"><i class="fa fa-clock"></i> Starting time</label>
+                    <input type="time" id="time" name="time" min="09:00" max="18:00" required> <br>
+                    <label for="session"><i class="fa fa-camera"></i> Session type</label>
+                    <select id="session" name="session">
+                      <option value="mini session">mini session | $90</option>
+                      <option value="saab">1-hour | $200</option>
+                      <option value="fiat">3-hour | $350</option>
+                      <option value="audi">12-hour | $1,200</option>
+                    </select>
+                    <label for="more">Is there anything I need to know about the session?</label>
+                    <textarea id="more" name="more" rows="4" cols="50">
+</textarea>
+                  </div>
+
+                  <div class="col-12 col-md-6 col-lg-6">
+                    <h3>Payment</h3>
+                    <label for="fname">Accepted Cards</label>
+                    <div class="icon-container">
+                      <i class="fab fa-cc-visa" style="color:navy;"></i>
+                      <i class="fab fa-cc-amex" style="color:blue;"></i>
+                      <i class="fab fa-cc-mastercard" style="color:red;"></i>
+                      <i class="fab fa-cc-discover" style="color:orange;"></i>
+                    </div>
+                    <label for="cname">Name on Card</label>
+                    <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                    <label for="ccnum">Credit card number</label>
+                    <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                    <label for="expmonth">Exp Month</label>
+                    <input type="text" id="expmonth" name="expmonth" placeholder="September">
+
+                    <div class="row">
+                      <div class="col-12 col-md-6 col-lg-6">
+                        <label for="expyear">Exp Year</label>
+                        <input type="text" id="expyear" name="expyear" placeholder="2018">
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-12">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="352">
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-12">
+                        <button type="submit" class="btn btn-primary mb-2 submit-pay"
+                          onclick="return confirm('This is a demo website only. This form is for show and will not book you a session or process any payment information.')">Submit
+                          and Pay</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <label>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT -->
+      <div id="contactPanel" class="raleway panel">
+        <div class="row">
+          <div class="col-5">
+            <img class="img-fluid" src="img/phone.jpg" style="width: 130%">
+          </div>
+          <div class="col-7 contact-form">
+            <h3>Send me a message!</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe"> <br>
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@example.com"> <br>
+            <label for="more">Your message</label> <br>
+            <textarea id="more" name="more" rows="2" cols="50">
+</textarea>
+            <button type="submit" class="btn btn-primary mb-2 submit-pay"
+              onclick="return confirm('This is a demo website only. This form is only for show and will not send a message.')">Send
+              Message</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="div1" class="portfolio text-center">
+        <div class="grid">
+          <div class="grid-sizer"></div>
+          <div class="grid-item js-slidein">
+            <img src="img/ared1.jpg" />
+            <div class="overlay">
+              <div class="text">on-site photo shoots</div>
+            </div>
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/ared2.jpg" />
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/ared3.jpg" />
+            <div class="overlay">
+              <div class="text">nature prints starting at $10</div>
+            </div>
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/ared4.jpg" />
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/borange1.jpg" />
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/borange2.jpg" />
+            <div class="overlay">
+              <div class="text">fun portrait sessions</div>
+            </div>
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/borange3.jpg" />
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/borange4.jpg" />
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/cyellow1.jpg" />
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/cyellow2.jpg" />
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/cyellow3.jpg" />
+            <div class="overlay">
+              <div class="text" style="font-size: 20px">1 hour portrait sessions starting at $150</div>
+            </div>
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/cyellow4.jpg" />
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/dgreen1.jpg" />
+            <div class="overlay">
+              <div class="text">I love to travel for destination weddings</div>
+            </div>
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/dgreen2.jpg" />
+            <div class="overlay">
+              <div class="text">landscape photography</div>
+            </div>
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/dgreen3.jpg" />
+            <div class="overlay">
+              <div class="text">framed prints starting at $45</div>
+            </div>
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/dgreen4.jpg" />
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/eblue1.jpg" />
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/eblue2.jpg" />
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/eblue3.jpg" />
+            <div class="overlay">
+              <div class="text" style="font-size: 25px">want more info? send me a message</div>
+            </div>
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/eblue4.jpg" />
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/fpurple1.jpg" />
+            <div class="overlay">
+              <div class="text" style="font-size: 30px">photo session with furry friends</div>
+            </div>
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/fpurple2.jpg" />
+            <div class="overlay">
+              <div class="text">book a session today!</div>
+            </div>
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/fpurple3.jpg" />
+          </div>
+          <div class="grid-item js-slidein">
+            <img src="img/fpurple4.jpg" />
+          </div>
+        </div>
+      </div>
+
+      <!-- about -->
+
+
+    </div>
   </div>
 
-
-  <div class="loader"></div>
-  <!-- Header  -->
-  <div id="particles-js">
-    <section class="header">
-      <div class="container">
-        <div class="row">
-          <div class="col-6  content-desktop">
-            <ul class="header-l synthese">
-              <li><a class="header-li" href="#about">about </a></li>
-              <li><a class="header-li" href="#ourteam">our team</a></li>
-              <li> <a class="header-li" href="#services">services </a></li>
-              <li><a class="header-li" href="#contact">contact </a></li>
-            </ul>
-          </div>
-          <div class="col-6">
-            <img src="img/logo.png" class="header-logo">
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!--About-->
-  <section id="about">
-    <div class="about-bg"></div>
+  <section class="mailing-list">
     <div class="container">
-      <div class="row about-row  js-slidein">
-        <div class="col-12col-md-12  col-lg-6 content-desktop content-tablet">
-          <div class="about-item">
-            <img src="img/abouth.png" width="95%" alt="Card Back" class="img-fluid about-building">
+      <h2 class="header-font my-4 font-weight-bold libre-caslon text-center">Join our mailing list!</h2>
+      <h3 class="main-nav raleway text-center">Get exclusive offers and special events sent to your inbox. </h3>
+      <div class="col-12 text-center">
+        <form class="form-inline">
+          <div class="form-group mx-sm-3 mb-2 text-center">
+            <label for="inputPassword2" class="sr-only">Email Address</label>
+            <input type="text" class="form-control" placeholder="email">
           </div>
-        </div>
-        <div class="col-12 col-md-12 col-lg-6">
-          <div class="col-12 section-header white right">
-            About
-          </div>
-          <div class="col-12 section-text synthese">
-            <p>Rm 29 was founded by Mia and Hanieka, two college roommates who shared the 29th room on the
-              6th floor of their dormitory in Boston, MA. </p>
-            <p>It was in that room that they began collaborating on projects
-              using their different skill sets of computer science and graphic design.</p>
-            <p>Since its founding in 2018, Rm 29 has worked with clients across the U.S. to bring ideas to life
-              and brands to the next level.</p>
-          </div>
-        </div>
-        <div class="col-12 content-mobile">
-          <img src="img/building.gif" class="building-gif">
-        </div>
+          <button type="submit" class="btn btn-primary mb-2">Join!</button>
+        </form>
       </div>
     </div>
   </section>
-
-
-  <!--Our Team  -->
-  <section id="ourteam">
-    <div class="container">
-      <div class="about-section">
-        <div class="row">
-          <div class="col-12 section-header ourteam-left">
-            Our Team
-          </div>
-        </div>
-        <div class="row js-slidein">
-          <div class="col-12 col-md-6 col-lg-6">
-            <div class="about-item content-desktop content-tablet">
-              <div class="dropdown about-item">
-
-                <img src="img/mia.jpg" width="95%" alt="Card Back" class="mia">
-                <a href="#"><img src="img/miah.jpg" width="95%" class="miah img-top" alt="Card Front"></a>
-
-                <div class="dropdown-content">
-                  <p class="synthese team-txt-desktop  mia-text">Mia is a software and web developer. With experience in
-                    backend
-                    programming,
-                    social
-                    media management,
-                    and UI/UX design, she has the skills to solve any problem presented to her. Check out her personal
-                    portfolio at <a href=" http://miakotalik.com/">miakotalik.com</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-6">
-            <div class="about-item content-desktop content-tablet">
-
-              <div class="dropdown about-item">
-                <img src="img/hanieka.jpg" width="95%" alt="Card Back" class="hanieka">
-                <a href="#"><img src="img/haniekah.jpg" width="95%" class="haniekah  img-top" alt="Card Front"></a>
-
-                <div class="dropdown-content">
-                  <p class="synthese team-txt-desktop hanieka-text">Hanieka is a graphic designer, illustrator,
-                    copywriter, and
-                    studio
-                    artist.
-                    With experience in corporate design, web design, publishing, and
-                    advertising, she is ready to cover all your graphics needs. Check out her personal portfolio at
-                    <a href="http://www.hanieka.com/">hanieka.com</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 content-mobile text-center">
-            <img src="img/mobileTeam.gif" class="mobile-team">
-          </div>
-          <div class="col-12 content-mobile col-md-12 col-lg-12">
-            <p class="synthese team-text">Mia is a software and web developer. With experience in backend
-              programming,
-              social
-              media management,
-              and UI/UX design, she has the skills to solve any problem presented to her. Check out her personal
-              portfolio at <a href=" http://miakotalik.com/">miakotalik.com</a></p>
-          </div>
-          <div class="col-12 content-mobile col-md-12 col-lg-12">
-            <p class="synthese team-text">Hanieka is a graphic designer, illustrator, copywriter, and studio artist.
-              With experience in corporate design, web design, publishing, and
-              advertising, she is ready to cover all your graphics needs. Check out her personal portfolio at
-              <a href="http://www.hanieka.com/">hanieka.com</a></p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    </div>
-  </section>
-
-
-  <!--Services-->
-  <section id="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-6">
-        </div>
-        <div class="col-12 col-md-12">
-          <div class="col-12 section-header white right services">
-            Services
-          </div>
-          <div class="col-12 section-text synthese">
-          </div>
-        </div>
-      </div>
-      <div class="row services text-center js-slidein">
-        <div class="col-12 col-md-12 col-lg-4">
-          <div class="dropdown about-item">
-            <img src="img/services-webdev.png" class="services-icon img-fluid" alt="Card Back">
-            <h3 class="white services-text">Web Development</h3>
-            <div class="dropdown-content">
-              <ul class="text-left white services-more synthese">
-                <li>responsive websites</li>
-                <li>front and backend design</li>
-                <li>newsletter templates</li>
-                <li>online store</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-12 col-lg-4">
-          <div class="dropdown about-item">
-            <img src="img/services-branding.png" class="services-icon img-fluid" alt="Card Back">
-            <h3 class="white services-text">Marketing Materials</h3>
-            <div class="dropdown-content">
-              <ul class="text-left white services-more synthese">
-                <li>logos</li>
-                <li>illustrated graphics</li>
-                <li>brand kits</li>
-                <li>social media</li>
-                <li>email signatures</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-12 col-lg-4">
-          <div class="dropdown about-item">
-            <img src="img/services-printmedia.png" class="services-icon img-fluid" alt="Card Back">
-            <h3 class="white services-text">Print Media</h3>
-            <div class="dropdown-content">
-              <ul class="text-left white services-more synthese">
-                <li>flyers and advertisements</li>
-                <li>stationary</li>
-                <li>business cards</li>
-                <li>merchandise</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--Contact-->
-  <section id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 section-header contact-left">
-          Contact Us
-        </div>
-        <div class="col-12">
-          <form class=" js-slidein" action="https://formspree.io/xoqkroln" method="POST" id="contactForm">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input name="name" class="form-control" id="name" type="text" placeholder="Name" required="required"
-                    data-validation-required-message="Please enter your name.">
-                  <p class="help-block text-danger"></p>
-                </div>
-                <div class="form-group">
-                  <input name="_replyto" class="form-control" id="email" type="email" placeholder="Email"
-                    required="required" data-validation-required-message="Please enter your email address.">
-                  <p class="help-block text-danger"></p>
-                </div>
-                <div class="form-group">
-                  <input name="phone" class="form-control" id="phone" type="tel" placeholder="Phone" required="required"
-                    data-validation-required-message="Please enter your phone number.">
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <textarea name="message" class="form-control" id="message" placeholder="Message" required="required"
-                    data-validation-required-message="Please enter a message."></textarea>
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-              <div class="col-lg-12">
-                <div id="success"></div>
-                <button id="sendMessageButton" class="btn btn-primary btn-xl btn-contact" type="submit">send us your
-                  message</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- scripts -->
-  <script src="js/particles.js"></script>
-  <script src="js/app.js"></script>
-
-
-
 
 
   <!-- Footer-->
   <footer class="footer">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-6 text-lg-left white">Copyright © Rm 29 2020</div>
-        <div class="col-lg-6 icons">
+        <div class="col-lg-4 text-lg-left white">Copyright © <a href="http://rmtwentynine.com/" target="_blank">Rm 29
+          </a> 2020</div>
+        <div class="col-lg-4 icons">
           <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a
             class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a
             class="btn btn-dark btn-social mx-2" target="_blank" href="https://www.instagram.com/rm29.designs/"><i
               class="fab fa-instagram"></i></a>
         </div>
+        <div class="col-lg-4 text-lg-left white">Enjoy this website? Contact <a href="http://rmtwentynine.com/"
+            target="_blank">Rm 29
+          </a>to get your own!</div>
       </div>
     </div>
   </footer>
@@ -337,13 +364,19 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+  <script src="js/masonry.js"></script>
+
+
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.slim.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
   <script src="js/slideIn.js"></script>
+
+  <!-- MDBootstrap Masonry  -->
+  <script type="text/javascript" src="vendor/mdb/js/addons/masonry.pkgd.min.js"></script>
+  <script type="text/javascript" src="vendor/mdb/js/addons/imagesloaded.pkgd.min.js"></script>
 </body>
 
 </html>
