@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>North Lake Photography Co</title>
+  <title>Watson Photography Co</title>
 
   <!--JQuery -->
   <!-- load jQuery 3.5.1 -->
@@ -45,7 +45,8 @@
   <link rel="stylesheet" href="css/flipimage.css">
 
 
-  <!-- Adobe Fonts-->
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Raleway:wght@300&display=swap"
     rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -55,7 +56,7 @@
   <script type="text/javascript" src="vendor/MDB/js/addons/masonry.pkgd.min.js"></script>
   <script type="text/javascript" src="vendor/MDB/js/addons/imagesloaded.pkgd.min.js"></script>
 
- 
+
   <!-- Favicons-->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
@@ -68,7 +69,7 @@
 
   <div class="section" id="portfolio">
     <div class="container-fluid">
-      <h1 class="header-font my-4 font-weight-bold libre-caslon text-center">North Lake Photography Co.</h1>
+      <h1 class="header-font my-4 libre-caslon text-center">Watson Photography Co.</h1>
       <h3 class="main-nav raleway text-center">
         <a href="#" id="flip" class="mn-item about">about </a>|
         <a href="#" id="buyFlip" class="mn-item buyprints">buy prints</a> |
@@ -84,7 +85,7 @@
           </div>
           <div class="col-9">
             <p class="about-text">
-              North Lake Photography Co. was founded in 2005 by me Lorraine Watson. I am
+              Watson Photography Co. was founded in 2005 by me Lorraine Watson. I am
               originally from
               Granville,
               Ohio but I moved to Chicago in 2007 to get a taste of the big city. I love telling the stories of people
@@ -104,19 +105,22 @@
       <!-- BUY -->
       <div id="buyPanel" class="raleway panel">
         <div class="row">
-          <div class=col-4>
+          <div class="col-12  col-md-4 text-center"
+            onclick="return confirm('This is a demo website only. The store feature has been deactivated. ')">
             <h2 class="text-center">Small Prints</h2>
-            <img class="img-fluid" src="img/lorraine.jpg" style="width: 90%">
+            <img class="img-fluid print-pic" src="img/print2.jpg" style="width: 90%">
             <h5 class="text-center print-price">starting at $10</h2>
           </div>
-          <div class=col-4>
-            <h2 class="text-center">Large Prints</h2>
-            <img class="img-fluid" src="img/lorraine.jpg" style="width: 90%">
+          <div class="col-12  col-md-4 text-center"
+            onclick="return confirm('This is a demo website only. The store feature has been deactivated. ')">
+            <h2 class="text-center">Medium Prints</h2>
+            <img class="img-fluid print-pic" src="img/print3.jpg" style="width: 90%">
             <h5 class="text-center print-price">starting at $30</h2>
           </div>
-          <div class=col-4>
-            <h2 class="text-center">Framed Prints</h2>
-            <img class="img-fluid" src="img/lorraine.jpg" style="width: 90%">
+          <div class="col-12  col-md-4 text-center"
+            onclick="return confirm('This is a demo website only. The store feature has been deactivated. ')">
+            <h2 class="text-center">Large Prints</h2>
+            <img class="img-fluid print-pic" src="img/print1.jpg" style="width: 90%">
             <h5 class="text-center print-price">starting at $45</h2>
           </div>
         </div>
@@ -133,15 +137,15 @@
                   <div class="col-12 col-md-6 col-lg-6">
                     <h3>Session Info</h3>
                     <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                    <input type="text" id="fname" name="firstname" placeholder="John M. Doe"> <br>
+                    <input type="text" id="fname" name="firstname" placeholder="John M. Doe" required> <br>
                     <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                    <input type="text" id="email" name="email" placeholder="john@example.com"> <br>
+                    <input type="text" id="email" name="email" placeholder="john@example.com" required> <br>
                     <label for="date"><i class="fa fa-calendar"></i> Date</label>
                     <input type="date" id="date" name="date"><br>
                     <label for="time"><i class="fa fa-clock"></i> Starting time</label>
                     <input type="time" id="time" name="time" min="09:00" max="18:00" required> <br>
                     <label for="session"><i class="fa fa-camera"></i> Session type</label>
-                    <select id="session" name="session">
+                    <select id="session" name="session" required>
                       <option value="mini session">mini session | $90</option>
                       <option value="saab">1-hour | $200</option>
                       <option value="fiat">3-hour | $350</option>
@@ -162,24 +166,24 @@
                       <i class="fab fa-cc-discover" style="color:orange;"></i>
                     </div>
                     <label for="cname">Name on Card</label>
-                    <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                    <input type="text" id="cname" name="cardname" placeholder="John More Doe" required>
                     <label for="ccnum">Credit card number</label>
-                    <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                    <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required> <br>
                     <label for="expmonth">Exp Month</label>
-                    <input type="text" id="expmonth" name="expmonth" placeholder="September">
+                    <input type="text" id="expmonth" name="expmonth" placeholder="September" required>
 
                     <div class="row">
-                      <div class="col-12 col-md-6 col-lg-6">
+                      <div class="col-12 col-md-6 col-lg-12">
                         <label for="expyear">Exp Year</label>
-                        <input type="text" id="expyear" name="expyear" placeholder="2018">
+                        <input type="text" id="expyear" name="expyear" placeholder="2020" required>
                       </div>
                       <div class="col-12 col-md-6 col-lg-12">
                         <label for="cvv">CVV</label>
-                        <input type="text" id="cvv" name="cvv" placeholder="352">
+                        <input type="text" id="cvv" name="cvv" placeholder="352" required>
                       </div>
                       <div class="col-12 col-md-6 col-lg-12">
                         <button type="submit" class="btn btn-primary mb-2 submit-pay"
-                          onclick="return confirm('This is a demo website only. This form is for show and will not book you a session or process any payment information.')">Submit
+                          onclick="return confirm('This is a demo website only. This form has been deactivated.')">Submit
                           and Pay</button>
                       </div>
                     </div>
@@ -209,7 +213,7 @@
             <textarea id="more" name="more" rows="2" cols="50">
 </textarea>
             <button type="submit" class="btn btn-primary mb-2 submit-pay"
-              onclick="return confirm('This is a demo website only. This form is only for show and will not send a message.')">Send
+              onclick="return confirm('This is a demo website only. The form feature has been deactivated.')">Send
               Message</button>
           </div>
         </div>
@@ -331,17 +335,14 @@
   </div>
 
   <section class="mailing-list">
-    <div class="container">
-      <h2 class="header-font my-4 font-weight-bold libre-caslon text-center">Join our mailing list!</h2>
+    <div class="container text-center">
+      <h2 class="libre-caslon text-center mail-header">Join my mailing list!</h2>
       <h3 class="main-nav raleway text-center">Get exclusive offers and special events sent to your inbox. </h3>
       <div class="col-12 text-center">
-        <form class="form-inline">
-          <div class="form-group mx-sm-3 mb-2 text-center">
-            <label for="inputPassword2" class="sr-only">Email Address</label>
-            <input type="text" class="form-control" placeholder="email">
-          </div>
-          <button type="submit" class="btn btn-primary mb-2">Join!</button>
-        </form>
+        <label for="email"><i class="fa fa-envelope"></i> Email: </label>
+        <input type="text" id="email" name="email" placeholder="john@example.com" required>
+        <button type="submit" class="btn btn-primary mb-2"
+          onclick="return confirm('This is a demo website only. The newsletter feature has been deactivated. ')">Join!</button>
       </div>
     </div>
   </section>
@@ -351,16 +352,17 @@
   <footer class="footer">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-4 text-lg-left white">Copyright © <a href="http://rmtwentynine.com/" target="_blank">Rm 29
+        <div class="col-lg-4 text-lg-left white">Copyright © <a class="footer-a" href="http://rmtwentynine.com/"
+            target="_blank">Rm 29
           </a> 2020</div>
         <div class="col-lg-4 icons">
-          <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a
-            class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a
-            class="btn btn-dark btn-social mx-2" target="_blank" href="https://www.instagram.com/rm29.designs/"><i
+          <a class="btn btn-primary btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a
+            class="btn btn-primary btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a
+            class="btn btn-primary btn-social mx-2" target="_blank" href="https://www.instagram.com/rm29.designs/"><i
               class="fab fa-instagram"></i></a>
         </div>
-        <div class="col-lg-4 text-lg-left white">Enjoy this website? Contact <a href="http://rmtwentynine.com/"
-            target="_blank">Rm 29
+        <div class="col-lg-4 text-lg-left white">Enjoy this website? <br> Contact <a href="http://rmtwentynine.com/"
+            class="footer-a" target="_blank">Rm 29
           </a>to get your own!</div>
       </div>
     </div>

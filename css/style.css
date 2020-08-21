@@ -99,7 +99,14 @@
 }
 
 .print-price {
-    margin-top: 10px;
+    margin-top: 20px;
+}
+
+.print-pic {
+    transition: transform 0.2s;
+}
+.print-pic:hover {
+    transform: scale(1.05);
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -160,7 +167,7 @@ https://bennettfeely.com/clippy/ */
 }
 
 .libre-caslon {
-    font-family: "Libre Caslon Display", serif;
+    font-family: "Libre Baskerville", serif;
 }
 
 .raleway {
@@ -174,7 +181,6 @@ https://bennettfeely.com/clippy/ */
 .main-nav {
     padding-bottom: 20px;
 }
-
 .mn-item {
     color: black;
 }
@@ -268,6 +274,15 @@ a.header-li:hover {
     border: 1.4px solid black;
     border-radius: 0rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.mail-header {
+    padding-bottom: 15px;
+}
+
+.footer-a {
+    text-decoration: none !important;
+    color: #e24b20 !important;
 }
 
 textarea.form-control {
